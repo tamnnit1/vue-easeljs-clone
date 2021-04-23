@@ -66,6 +66,10 @@ export default {
                 }
             } else if (this.form === 'star') {
                 this.component.graphics.drawPolyStar(this.dimensions[0], this.dimensions[0], this.dimensions[0], this.dimensions[1], this.dimensions[2], 0);
+            } else if (this.form === 'line') {
+                this.component.graphics.setStrokeStyle(this.dimensions[0]).beginStroke("rgba(0,0,0,1)");
+                this.component.graphics.lineTo(this.dimensions[1], this.dimensions[2]);;
+
             }
         },
         getAlignDimensions() {
@@ -83,6 +87,12 @@ export default {
                 return Promise.resolve({
                     width: this.dimensions[0] * 2,
                     height: this.dimensions[0] * 2,
+                });
+            } else if (this.form === 'line') {
+                // line ignore
+                return Promise.resolve({
+                    width: 0,
+                    height: 0,
                 });
             } else {
                 return Promise.reject(`No dimensions available for form ${this.form}`);
