@@ -67,9 +67,15 @@ export default {
             } else if (this.form === 'star') {
                 this.component.graphics.drawPolyStar(this.dimensions[0], this.dimensions[0], this.dimensions[0], this.dimensions[1], this.dimensions[2], 0);
             } else if (this.form === 'line') {
-                this.component.graphics.setStrokeStyle(this.dimensions[0]).beginStroke("rgba(0,0,0,1)");
-                this.component.graphics.lineTo(this.dimensions[1], this.dimensions[2]);;
-
+                const lines = this.dimensions[1];
+                if (lines) {
+                    this.component.graphics.setStrokeStyle(this.dimensions[0]);
+                    for (let index = 0; index < lines.length; index++) {
+                        const line = lines[index];
+                        this.component.graphics.moveTo(line.x, line.y).lineTo(line.toX, line.toY)
+                    }
+                    this.component.graphics.endStroke();
+                }
             }
         },
         getAlignDimensions() {

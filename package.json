@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dankuck/vue-easeljs.git"
+    "url": "git+https://tamnnit1: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@github.com/tamnnit1/vue-easeljs-clone.git"
   },
   "contributors": {
     "name": "Dan Kuck-Alvarez",
@@ -39,7 +39,6 @@
     "lodash.shuffle": "^4.2.0",
     "mocha": "^3.2.0",
     "phantomjs-prebuilt": "^2.1.14",
-    "vue": "^2.1.*",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0"
+    "vue": "^2.1.*"
   }
 }
